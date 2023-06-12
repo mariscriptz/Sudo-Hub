@@ -1,0 +1,214 @@
+--UI Design
+local player = game.Players.LocalPlayer
+local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/mariscriptz/OrionEdited/main/source')))()
+local Window = OrionLib:MakeWindow({Name = "Sudo Hub: Key System", HidePremium = false, SaveConfig = true, IntroEnabled = "Sudo Hub: V1"})
+--Window above
+OrionLib:MakeNotification({
+	Name = "Key Correct!",
+	Content = "You are now logged in as"..player.Name..".",
+	Image = "rbxassetid://4483345998",
+	Time = 5
+})
+
+_G.Key = "JJa1123a"
+_G.Key2 = "SudoHubIsTheVeryBest"
+_G.Key3 = "KeysAreVeryCOOL"
+_G.KeyInput = "string"
+local KeyTab = Window:MakeTab({
+	Name = "Key",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+ 
+function MakeScriptHub()
+--UI Design
+
+local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/mariscriptz/OrionEdited/main/source')))()
+
+--Window
+local Window = OrionLib:MakeWindow({Name = "Sudo Hub: V1", HidePremium = false, SaveConfig = true, IntroText = false})
+OrionLib:MakeNotification({
+	Name = "Sudo Hub",
+	Content = "I will not disappoint.",
+	Image = "rbxassetid://4483345998",
+	Time = 5
+})
+
+
+
+local PlayerTab = Window:MakeTab({
+	Name = "Player",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+ 
+local Section = PlayerTab:AddSection({
+	Name = "Movement"
+})
+
+PlayerTab:AddSlider({
+	Name = "Walkspeed",
+	Min = 16,
+	Max = 500,
+	Default = 16,
+	Color = Color3.fromRGB(255,255,255),
+	Increment = 1,
+	ValueName = "WS",
+	Callback = function(Value)
+		print(Value)
+        game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = Value
+	end    
+})
+
+PlayerTab:AddSlider({
+	Name = "Jump Height",
+	Min = 50,
+	Max = 500,
+	Default = 50,
+	Color = Color3.fromRGB(255,255,255),
+	Increment = 1,
+	ValueName = "Height",
+	Callback = function(Value)
+		print(Value)
+        game.Players.LocalPlayer.Character.Humanoid.JumpPower = Value
+	end    
+})
+
+local MainTab = Window:MakeTab({
+	Name = "Main",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+
+local Section = MainTab:AddSection({
+	Name = "Main Area"
+})
+ 
+MainTab:AddButton({
+	Name = "Nameless Admin (Universal)",
+	Callback = function()
+      		
+              loadstring(game:HttpGet("https://raw.githubusercontent.com/FilteringEnabled/NamelessAdmin/main/Source"))();
+              print("Nameless Admin Ran")
+  	end    
+})
+MainTab:AddButton({
+	Name = "Destroy Radalf (Eternal Craftwars)",
+	Callback = function()
+              game.Workspace.Lobby.Radalf:Destroy()
+              print("Radalf Destroyed")
+  	end    
+})
+MainTab:AddButton({
+	Name = "Give Nackers True Scythe (Eternal Craftwars)",
+	Callback = function()
+        local Player = game.Players.LocalPlayer
+              local tool = game.ReplicatedStorage.Items.NackersTrueScythe.Tool
+              tool:Clone().Parent = Player.Backpack
+              tool:Clone().Parent = Player.StarterGear
+    
+  	end    
+})
+MainTab:AddButton({
+	Name = "No Max Cap Super Rebs (A Hero Destiny)",
+	Callback = function()
+      local SRebsCap = game.ReplicatedStorage.MaxSuperRebirth
+      SRebsCap.Value = 9999999999999999999999
+    
+  	end    
+})
+MainTab:AddButton({
+	Name = "Unlimited Experience Multiplier (A Hero Destiny)",
+	Callback = function()
+      local UEM = game.ReplicatedStorage.ExperienceMultiplier
+      UEM.Value = 9999999999999999999999
+    
+  	end    
+})
+MainTab:AddButton({
+	Name = "Remote Spy (Simple Spy/Universal)",
+	Callback = function()
+      loadstring(game:HttpGet("https://raw.githubusercontent.com/78n/SimpleSpy/main/SimpleSpySource.lua"))()
+    print("Everything ran ok!")
+  	end    
+})
+MainTab:AddButton({
+	Name = "Grass Cutting Incremental GUI",
+	Callback = function()
+      loadstring(game:HttpGet("https://raw.githubusercontent.com/GreyCaat/Grass-Cutting-Incremental/main/script.txt", true))()
+    print("Everything ran ok!")
+  	end    
+})
+MainTab:AddButton({
+	Name = "Funky Friday Auto Play (OP)",
+	Callback = function()
+      loadstring(game:HttpGet("https://raw.githubusercontent.com/wally-rblx/funky-friday-autoplay/main/main.lua",true))()
+    print("Everything ran ok!")
+  	end    
+})
+MainTab:AddButton({
+	Name = "Mad City GUI (OP)",
+	Callback = function()
+      loadstring(game:HttpGet("https://pastebin.com/raw/8Q7y93US", true))()
+    print("Everything ran ok!")
+  	end    
+})
+
+
+local SettingsTab = Window:MakeTab({
+	Name = "Settings",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+local Section = SettingsTab:AddSection({
+	Name = "Credits: 🌹 Mari🌹#9998 | YT: mari does videos"
+})
+
+SettingsTab:AddButton({
+	Name = "Keybind (Console)",
+	Callback = function()
+     print("Keybind is Left Control")
+    
+  	end 
+})
+
+end
+function CorrectKeyNotifi()
+	OrionLib:MakeNotification({
+		Name = "Correct Key",
+		Content = "Correct key you may now enter.",
+		Image = "rbxassetid://4483345998",
+		Time = 5
+	})
+end
+function IncorrectKey()
+	OrionLib:MakeNotification({
+		Name = "Incorrect Key!",
+		Content = "Please enter the correct key next time.",
+		Image = "rbxassetid://4483345998",
+		Time = 5
+	})
+end
+
+KeyTab:AddTextbox({
+	Name = "Enter Key",
+	Default = "",
+	TextDisappear = true,
+	Callback = function(Value)
+		_G.KeyInput = Value
+		print(KeyInput)
+	end	  
+})
+KeyTab:AddButton({
+	Name = "Check Key",
+	Callback = function()
+      		if _G.KeyInput == _G.Key and _G.Key2 and _G.Key3
+			 
+MakeScriptHub()
+CorrectKeyNotifi()
+	else
+IncorrectKey()
+	end
+  	end    
+})
+
