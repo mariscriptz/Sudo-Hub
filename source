@@ -1,3 +1,4 @@
+print("Ran Successfully")
 --UI Design
 local player = game.Players.LocalPlayer
 local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/mariscriptz/OrionEdited/main/source')))()
@@ -10,7 +11,7 @@ OrionLib:MakeNotification({
 	Time = 5
 })
 
-_G.Key = "JJa1123a" and "SudoHubIsTheVeryBest" and "KeysAreVeryCOOL" 
+_G.Key = "JJa1123a" and "SudoHubIsTheVeryBest"  
 
 
 _G.KeyInput = "string"
