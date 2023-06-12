@@ -1,18 +1,18 @@
 --UI Design
 local player = game.Players.LocalPlayer
 local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/mariscriptz/OrionEdited/main/source')))()
-local Window = OrionLib:MakeWindow({Name = "Sudo Hub: Key System", HidePremium = false, SaveConfig = true, IntroEnabled = false})
+local Window = OrionLib:MakeWindow({Name = "Sudo Hub: Key System", HidePremium = false, SaveConfig = true, ConfigFolder = "OrionTest", IntroText = "Sudo Hub: Key System" })
 --Window above
 OrionLib:MakeNotification({
 	Name = "Key Correct!",
-	Content = "You are now logged in as"..player.Name..".",
+	Content = "You are now logged in as "..player.Name..".",
 	Image = "rbxassetid://4483345998",
 	Time = 5
 })
 
-_G.Key = "JJa1123a"
-_G.Key2 = "SudoHubIsTheVeryBest"
-_G.Key3 = "KeysAreVeryCOOL"
+_G.Key = "JJa1123a" and "SudoHubIsTheVeryBest" and "KeysAreVeryCOOL" 
+
+
 _G.KeyInput = "string"
 local KeyTab = Window:MakeTab({
 	Name = "Key",
@@ -26,7 +26,7 @@ function MakeScriptHub()
 local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/mariscriptz/OrionEdited/main/source')))()
 
 --Window
-local Window = OrionLib:MakeWindow({Name = "Sudo Hub: V1", HidePremium = false, SaveConfig = true, IntroText = "Sudo Hub: V1"})
+local Window = OrionLib:MakeWindow({Name = "Sudo Hub: V1", HidePremium = false, SaveConfig = true, ConfigFolder = "OrionTest", IntroText = "Sudo Hub: V1"})
 OrionLib:MakeNotification({
 	Name = "Sudo Hub",
 	Content = "I will not disappoint.",
@@ -171,8 +171,8 @@ SettingsTab:AddButton({
     
   	end 
 })
-end
 
+end
 function CorrectKeyNotifi()
 	OrionLib:MakeNotification({
 		Name = "Correct Key",
@@ -202,7 +202,7 @@ KeyTab:AddTextbox({
 KeyTab:AddButton({
 	Name = "Check Key",
 	Callback = function()
-      		if _G.KeyInput == _G.Key and _G.Key2 and _G.Key3 then
+      		if _G.KeyInput == _G.Key  then
 			 
 MakeScriptHub()
 CorrectKeyNotifi()
