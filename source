@@ -173,11 +173,66 @@ SettingsTab:AddButton({
   	end 
 })
 
+SettingsTab:AddButton({
+	Name = "Delete UI",
+	Callback = function()
+     OrionLib:Destroy()
+    
+  	end 
+	
+})
+
+	if game.PlaceId == 3859039810 then
+		local MunchingTab = Window:MakeTab({
+			Name = "Munching Masters",
+			Icon = "rbxassetid://4483345998",
+			PremiumOnly = false
+		})
+		local Section = MunchingTab:AddSection({
+			Name = "Munching Masters OP"
+		})
+		MunchingTab:AddToggle({
+			Name = "Auto Eat",
+			Default = true,
+			Callback = function(Value)
+			
+				game:GetService("ReplicatedStorage").Events.Player.Eat:FireServer()
+				print("eating")
+				
+			end    
+		})
+		MunchingTab:AddDropdown({
+			Name = "Teleports",
+			Default = "1",
+			Options = {"Sell", "Home"},
+			Callback = function(Value)
+				
+
+game:GetService("ReplicatedStorage").Events.Player.Teleport:FireServer(workspace.SELL.Pad)
+			end    
+		})
+
+
+			
+
+
+			
+		
+end
+
 end
 function CorrectKeyNotifi()
 	OrionLib:MakeNotification({
 		Name = "Correct Key",
 		Content = "Correct key you may now enter.",
+		Image = "rbxassetid://4483345998",
+		Time = 5
+	})
+end
+function KeyCopiedNotifi()
+	OrionLib:MakeNotification({
+		Name = "Key Link Copied!",
+		Content = "Key copied!",
 		Image = "rbxassetid://4483345998",
 		Time = 5
 	})
@@ -210,6 +265,14 @@ CorrectKeyNotifi()
 	else
 IncorrectKey()
 	end
+  	end    
+})
+
+KeyTab:AddButton({
+	Name = "Get Key",
+	Callback = function()
+      		setclipboard("https://bit.ly/keysystem01")
+			  KeyCopiedNotifi()
   	end    
 })
 
