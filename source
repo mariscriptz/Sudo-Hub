@@ -1,7 +1,7 @@
 --UI Design
 local player = game.Players.LocalPlayer
 local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/mariscriptz/OrionEdited/main/source')))()
-local Window = OrionLib:MakeWindow({Name = "Sudo Hub: Key System", HidePremium = false, SaveConfig = true, IntroEnabled = true})
+local Window = OrionLib:MakeWindow({Name = "Sudo Hub: Key System", HidePremium = false, SaveConfig = true, IntroEnabled = false})
 --Window above
 OrionLib:MakeNotification({
 	Name = "Key Correct!",
@@ -171,8 +171,8 @@ SettingsTab:AddButton({
     
   	end 
 })
-
 end
+
 function CorrectKeyNotifi()
 	OrionLib:MakeNotification({
 		Name = "Correct Key",
@@ -202,7 +202,7 @@ KeyTab:AddTextbox({
 KeyTab:AddButton({
 	Name = "Check Key",
 	Callback = function()
-      		if _G.KeyInput == _G.Key and _G.Key2 and _G.Key3
+      		if _G.KeyInput == _G.Key and _G.Key2 and _G.Key3 then
 			 
 MakeScriptHub()
 CorrectKeyNotifi()
