@@ -11,7 +11,7 @@ OrionLib:MakeNotification({
 	Time = 5
 })
 
-_G.Key = "JJa1123a" and "SudoHubIsTheVeryBest"  
+_G.Key = "SudoHubIsTheVeryBest"  
 
 
 _G.KeyInput = "string"
