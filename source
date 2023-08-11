@@ -11,16 +11,33 @@ OrionLib:MakeNotification({
 	Time = 5
 })
 
-_G.Key = "SudoHubIsTheVeryBest"  
-
-
+_G.Key = "200X"  
+_G.autoTap = true
+_G.autoRebirth = true
 _G.KeyInput = "string"
 local KeyTab = Window:MakeTab({
 	Name = "Key",
 	Icon = "rbxassetid://4483345998",
 	PremiumOnly = false
 })
- 
+ function autoTap()
+while _G.autoTap == true do 
+	
+		
+		game:GetService("ReplicatedStorage").Events.Tap:FireServer("Main")
+		wait(0.0000000000000000000000000000000000000000000001)
+	end
+ end
+ function autoRebirth()
+	while _G.autoRebirth == true do 
+		
+			
+			
+
+game:GetService("ReplicatedStorage").Events.Rebirth:FireServer(1)
+wait(0.0000000000000000000000000000000000000000000001)
+		end
+	 end
 function MakeScriptHub()
 --UI Design
 
@@ -181,46 +198,46 @@ SettingsTab:AddButton({
   	end 
 	
 })
+if game.PlaceId == 9498006165 then
+	local TappingTab = Window:MakeTab({
+		Name = "Tapping Sim",
+		Icon = "rbxassetid://4483345998",
+		PremiumOnly = false
+	})
 
-	if game.PlaceId == 3859039810 then
-		local MunchingTab = Window:MakeTab({
-			Name = "Munching Masters",
-			Icon = "rbxassetid://4483345998",
-			PremiumOnly = false
-		})
-		local Section = MunchingTab:AddSection({
-			Name = "Munching Masters OP"
-		})
-		MunchingTab:AddToggle({
-			Name = "Auto Eat",
-			Default = true,
-			Callback = function(Value)
+	local Section = TappingTab:AddSection({
+		Name = "Tapping Simulator"
+	})
+
+	TappingTab:AddToggle({
+		Name = "Auto Tap",
+		Default = false,
+		Callback = function(Value)
+			_G.autoTap = Value
+			autoTap()
+end
+	})
+	TappingTab:AddToggle({
+		Name = "Auto Rebirth (1)",
+		Default = false,
+		Callback = function(Value)
+			_G.autoRebirth = Value
+			autoRebirth()
+end
+	})
+end
+end
+
+
+
 			
-				game:GetService("ReplicatedStorage").Events.Player.Eat:FireServer()
-				print("eating")
 				
-			end    
-		})
-		MunchingTab:AddDropdown({
-			Name = "Teleports",
-			Default = "1",
-			Options = {"Sell", "Home"},
-			Callback = function(Value)
-				
-
-game:GetService("ReplicatedStorage").Events.Player.Teleport:FireServer(workspace.SELL.Pad)
-			end    
-		})
-
-
 			
-
 
 			
 		
-end
 
-end
+
 function CorrectKeyNotifi()
 	OrionLib:MakeNotification({
 		Name = "Correct Key",
@@ -275,4 +292,3 @@ KeyTab:AddButton({
 			  KeyCopiedNotifi()
   	end    
 })
-
